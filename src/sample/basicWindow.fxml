@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BasicController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <RadioButton fx:id="realFenceButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Rayle fence">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupChiper" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="columnMethodButton" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Column method" toggleGroup="$groupChiper" />
+                  <RadioButton fx:id="vigenereButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Vigenere" toggleGroup="$groupChiper" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="47.0" text="Key" />
+                  <TextField fx:id="keyTextField" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin></TextField>
+                  <Label text="Text" />
+                  <TextArea fx:id="inputTextField" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin></TextArea>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onDownloadText" prefHeight="51.0" prefWidth="155.0" text="Download Text" />
+            <Button mnemonicParsing="false" onAction="#onStart" prefHeight="51.0" prefWidth="155.0" text="Start" />
+            <Button mnemonicParsing="false" onAction="#onShowReport" prefHeight="51.0" prefWidth="155.0" text="show Report" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+         <children>
+            <RadioButton fx:id="encryptButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Encrypt">
+               <toggleGroup>
+                  <ToggleGroup fx:id="encryptionGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="decryptButton" lineSpacing="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Decrypt" toggleGroup="$encryptionGroup" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
